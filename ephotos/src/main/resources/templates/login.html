@@ -29,7 +29,9 @@
             text-align: center;
             width: 400px;
             height: 450px;
-
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .login i {
@@ -44,9 +46,6 @@
             width: 65%;
             padding: 10px;
             margin-bottom: 15px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -54,7 +53,7 @@
         }
 
         .login button {
-            width: 40%;
+            width: 65%;
             padding: 10px;
             background-color: #4742f0;
             margin-top: 20px;
@@ -64,25 +63,17 @@
             cursor: pointer;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: box-shadow 0.3s ease;
-
-
         }
-        .login button:hover{
+
+        .login button:hover {
             background-color: #292673;
-            color: white;
         }
 
-       
         h2 {
             padding: 10px;
             background: linear-gradient(45deg, rgb(109, 113, 228), rgb(9, 6, 7));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-
-        }
-
-        #password {
-            margin-top: 30px;
         }
 
         .login a {
@@ -99,32 +90,14 @@
 </head>
 
 <body>
-    <form class="login">
+    <form class="login" action="/login" method="post">
         <i class="fa-solid fa-camera"></i>
         <h2>e-Photos</h2>
-        <input type="text" placeholder="USUÁRIO" name="usuario" id="usuario">
-        <input type="password" placeholder="SENHA" name="password" id="password">
-        <!-- <button type="submit" id="submit">Entrar</button> -->
-        <a href="/principal" id="temporario">Entrar</a>
-
-        <style>
-          #temporario{
-            width: 40%;
-            padding: 10px;
-            background-color: #4742f0;
-            margin-top: 20px;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease;
-            margin-left: auto;
-            margin-right: auto;
-          }
-        </style>
-        <a href="/login/login-cadastro.html" id="cadastrar">Cadastrar</a>
-        <a href="/login/login-recupera.html" id="recuperar">recuperar senha</a>
+        <input type="text" placeholder="Usuário" name="username" required>
+        <input type="password" placeholder="Senha" name="password" required>
+        <button type="submit">Entrar</button>
+        <a href="/cadastro">Cadastre-se</a>
+        <a href="/recuperar-senha">Recuperar senha</a>
     </form>
 </body>
 

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<title>Menu Lateral</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex; /* Para alinhar menu e conteúdo lado a lado */
+    }
+    .menu {
+        width: 200px;
+        background-color: #7993cd;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centralizar itens verticalmente */
+    }
+    .menu a {
+        display: block;
+        color: #333;
+        text-decoration: none;
+        padding: 10px;
+        text-align: center;
+        transition: background-color 0.3s;
+    }
+    .menu a:hover {
+        background-color: #ddd;
+    }
+    .tabela{
+        width: 400px;
+
+    }
+    .conteudo {
+        margin-left: 200px;
+        padding: 20px;
+        width: calc(100% - 200px); /* Utiliza todo espaço restante */
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Divide em duas colunas */
+        gap: 20px; /* Espaço entre as colunas */
+    }
+    .calendario {
+        width: 100%;
+        max-width: 450px; /* Ajuste para 450px */
+        border-collapse: collapse;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efeito de sombra */
+        overflow: hidden; /* Para evitar que a sombra se estenda além da tabela */
+    }
+    .calendario th, .calendario td {
+        padding: 12px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+    .calendario th {
+        background-color: #f2f2f2;
+    }
+    .calendario tr:last-child td {
+        border-bottom: none;
+    }
+    .calendario .mes {
+        text-align: center;
+        background-color: #f2f2f2;
+        font-weight: bold;
+        padding: 10px;
+    }
+    .calendario .dia {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        vertical-align: middle;
+        border-radius: 50%;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .calendario .dia:hover {
+        background-color: #ddd;
+    }
+    .fa-compass {
+        font-size: 290px;
+        margin-top: 10%;
+
+        
+    }
+</style>
+</head>
+<body>
+    <div class="menu">
+        <a href="/principal/agenda">AGENDA</a>
+        <a href="/principal/clientes">CLIENTES</a>
+        <a href="/principal/sessoes">SESSÕES</a>
+        <a href="/principal/controle">CONTROLE</a>
+        <a href="#">SAIR</a>
+    </div>
+    <!-- Conteúdo da página -->
+    <div class="conteudo">
+        <div class="calendario">
+            <h2>Agenda Semanal</h2>
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>Dia da Semana</th>
+                        <th>Atividades</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Segunda-feira</td>
+                        <td>...</td>
+                    </tr>
+                    <tr>
+                        <td>Terça-feira</td>
+                        <td>...</td>
+                    </tr>
+                    <!-- Adicione mais linhas conforme necessário -->
+                </tbody>
+            </table>
+        </div>
+        <div class="calendario">
+            <h2>Agenda Mensal</h2>
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th colspan="7" class="mes">Julho</th>
+                    </tr>
+                    <tr>
+                        <th>Dom</th>
+                        <th>Seg</th>
+                        <th>Ter</th>
+                        <th>Qua</th>
+                        <th>Qui</th>
+                        <th>Sex</th>
+                        <th>Sáb</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td> <!-- Dia vazio para ajustar o início do mês -->
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td></td> <!-- Dias vazios para completar a última linha -->
+                        <td></td>
+                    </tr>
+                    <!-- Adicione mais linhas conforme necessário -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
